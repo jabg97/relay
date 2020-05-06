@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+	<title>Calculadora</title>
+	</head>
+	<body>
+	<center>
+	<br/><br/>
+	<div class="col-md-12 container-fluid">
+	<div class="panel panel-primary">
+ 	<div class="panel-heading"><h1 class="text-default " ><strong>Calculadora</strong></h1></div>
+  	<div class="panel-body">
+		<form>
+			<div class="form-group">
+			<label class="text-primary" for="num1">Operador #1</label><input class="form-control" id="num1"/></div><br/>
+			<div class="form-group">
+			<label class="text-primary" for="num2">Operador #2</label><input class="form-control" id="num2"/></div><hr/>
+			<div class="form-group">
+  			<label class="text-danger" for="opcion">Seleccione la Operacion</label>
+			<select class="form-control" id="opcion">
+				<option value="1">Sumar</option>
+				<option value="2">Restar</option>
+				<option value="3">Multiplicar</option>
+				<option value="4">Dividir</option>
+			</select>
+			</div>
+			<br/><br/>
+			<button id="btn" class="btn btn-primary">Calcular</button>
+		</form>
+	</div>
+	</div>
+	</div>
+
+	<div id="mod" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h1 class="modal-title text-danger">Resultado</h1>
+      </div>
+      <div class="modal-body">
+       <div id="resul"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+	</center>
+		<script lang="javascript" src="jquery.js"></script>
+		<script lang="javascript" src="bootstrap.js"></script>
+		<script lang="javascript">
+		$("#btn").click(function(nav){
+			var n1 = $("#num1").val();
+			var n2 = $("#num2").val();
+			var opc = $("#opcion").val();
+			var url = "../../cgi-bin/C/lang_c/c.exe?num1="+n1+"&num2="+n2+"&opcion="+opc;
+			window.open(url);
+			nav.preventDefault();
+		});
+		</script>
+
+	</body>
+</html>

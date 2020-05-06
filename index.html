@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link type="text/css" rel="stylesheet" href="bootstrap.css"/>
+	<link type="text/css" rel="stylesheet" href="toggle.css"/>
+	<title>LPT</title>
+	<script>
+    $(function () {
+        $("[data-toggle='tooltip']").tooltip();
+    });
+</script>
+	<script lang="javascript" src="jquery.js"></script>
+	</head>
+	<body>
+	<center>
+	<br/><br/>
+	<div class="col-md-12 container-fluid">
+	<div class="panel panel-primary">
+ 	<div class="panel-heading"><h1 class="text-default " ><strong>Puerto LPT</strong></h1></div>
+  	<div class="panel-body">
+		<form>
+			<div class="form-group">
+			<br/><br/>
+			<label class="text-primary">Reles</label>
+			<br/>
+
+			<form class="form-inline">
+
+</form>		
+<form class="form-inline" role="form">
+			
+<!--
+<div class="form-group" id="dr8" onmouseover =" $('#dr8').tooltip('show')" rel='tooltip' title ="Valor: 128">
+  <input class="relay" id ="relay8" disabled value="128" data-on="R8: On" data-off="R8: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+<div class="form-group"id="dr7" onmouseover =" $('#dr7').tooltip('show')" rel='tooltip' title ="Valor: 64">
+  <input class="relay" id ="relay7" disabled value="64" data-on="R7: On" data-off="R7: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+<div class="form-group" id="dr6" onmouseover =" $('#dr6').tooltip('show')" rel='tooltip' title ="Valor: 32">
+  <input class="relay" id ="relay6" disabled value="32" data-on="R6: On" data-off="R6: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+<div class="form-group" id="dr5" onmouseover =" $('#dr5').tooltip('show')" rel='tooltip' title ="Valor: 16">
+  <input class="relay" id ="relay5" disabled value="16" data-on="R5: On" data-off="R5: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+-->
+
+<div class="form-group" id="dr4" onmouseover =" $('#dr4').tooltip('show')"  rel='tooltip' title ="Valor: 8">
+  <input class="relay" id ="relay4" value="8" data-on="R4: On" data-off="R4: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+<div class="form-group" id="dr3" onmouseover =" $('#dr3').tooltip('show')" rel='tooltip' title ="Valor: 4">
+  <input class="relay" id ="relay3" value="4" data-on="R3: On" data-off="R3: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+<div class="form-group" id="dr2" onmouseover =" $('#dr2').tooltip('show')" rel='tooltip' title ="Valor: 2">
+  <input class="relay" id ="relay2" value="2" data-on="R2: On" data-off="R2: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+<div class="form-group" id="dr1" onmouseover =" $('#dr1').tooltip('show')" rel='tooltip' title ="Valor: 1">
+  <input class="relay" id ="relay1" value="1" data-on="R1: On" data-off="R1: Off" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-size="small" type="checkbox"> 
+</div>
+</form>
+
+<br/><br/><br/>
+
+<div id="divbin" class="alert alert-info"></div>
+
+			<label class="text-primary" for="txt_puerto">Puerto</label><input type="text" class="form-control" id="txt_puerto" value="0x378"/></div><br/>
+			<div class="form-group">
+			<label class="text-primary" for="txt_datos">Datos</label><input type="text" class="form-control" id="txt_datos" value="0" readonly/></div><hr/>
+
+			<div id="divactual" class="alert alert-warning"></div>
+			
+			<br/><br/>
+			<button id="btn" class="btn btn-primary" style="outline-width: 0px;">Enviar</button> 
+			<button id="btn_histo" class="btn btn-info"  style="outline-width: 0px;">Ver Historial</button>
+		</form>
+	</div>
+	</div>
+	</div>
+
+	<div id="mod" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h1 class="modal-title text-danger">Resultado</h1>
+      </div>
+      <div class="modal-body">
+       <div id="resul"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="mod_histo" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h1 class="modal-title text-danger">Historial</h1>
+      </div>
+      <div class="modal-body">
+       <div id="histo"></div>
+      </div>
+      <div class="modal-footer">
+  <button id="btn_borrar" class="btn btn-warning btn-sm"  style="outline-width: 0px;">Borrar Historial</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+	</center>
+		<script lang="javascript" src="bootstrap.js"></script>
+		<script lang="javascript" src="toggle.js"></script>
+		<script lang="javascript">
+		
+		function histo(){
+		var port = $("#txt_puerto").val();
+			 var data = $("#txt_datos").val();
+			$.ajax({
+				url: "../../cgi-bin/C/Relay/main.exe",
+				type:"GET",
+				data:"puerto="+port+"&datos="+data+"&menu=3&row=-1",
+ 			beforeSend: function() {
+ 				$("#btn_histo").focus().after("<br/><img id='img' src='img.gif'>");
+    			},
+			success: function(data) {
+    			$("#histo").html("");
+    			$("#img").remove();
+    			$("#mod_histo").modal('show');
+     			$("#histo").html(data);
+    			}
+ 			});
+		}
+		
+		
+		function Fila(row){
+		if(confirm("Desea Eliminar el Registro #"+(row+1)+"?")){
+			 if(confirm("Esta Seguro?")){			 
+var port = $("#txt_puerto").val();
+			 var data = $("#txt_datos").val();
+			$.ajax({
+				url: "../../cgi-bin/C/Relay/main.exe",
+				type:"GET",
+				data:"puerto="+port+"&datos="+data+"&menu=6&row="+row,
+				beforeSend: function() {
+ 				$("#mod_histo").modal('hide');
+    			},
+			success: function(data) {
+		alert(data);
+    			}
+ 			});	
+			}
+			}
+		}
+			
+		
+		
+		function dato_actual(){
+var port = $("#txt_puerto").val();
+			 var data = $("#txt_datos").val();
+			$.ajax({
+				url: "../../cgi-bin/C/Relay/main.exe",
+				type:"GET",
+				data:"puerto="+port+"&datos="+data+"&menu=1&row=-1",
+ 			beforeSend: function() {
+ 				$("#btn_histo").focus().after("<br/><img id='img' src='img.gif'>");
+    			},
+			success: function(data) {
+    			$("#divactual").html("");
+    			$("#img").remove();
+     			$("#divactual").html(data);
+				reles();
+    			}
+ 			});	
+		}
+		
+		
+				function reles(){
+var port = $("#txt_puerto").val();
+			 var data = $("#txt_datos").val();
+			$.ajax({
+				url: "../../cgi-bin/C/Relay/main.exe",
+				type:"GET",
+				data:"puerto="+port+"&datos="+data+"&menu=4&row=-1",
+ 			beforeSend: function() {
+ 				$("#btn_histo").focus().after("<br/><img id='img' src='img.gif'>");
+    			},
+			success: function(data) {
+			var deci = 0;
+			var lista_reles = data.split("");
+			  $("#divbin").html("");
+    			$("#img").remove();
+				$("#divbin").html("<strong>Binario:</strong> "+lista_reles[3]+lista_reles[2]+lista_reles[1]+lista_reles[0]);
+				for (x = 0; x < 4; x++) {	
+				if(lista_reles[x] == 1){			
+				$("#relay" + (x + 1)).bootstrapToggle('on');
+				}else{
+				$("#relay" + (x + 1)).bootstrapToggle('off');
+				}
+					deci += Math.pow(2,x) * lista_reles[x];
+					}					
+    			
+				$("#txt_datos").val(deci);
+				}
+ 			});	
+		}
+		
+$( document ).ready(function(nav) {
+		dato_actual();
+		nav.preventDefault();
+});
+		
+		$("#relay1").change(function(){
+		var d =parseInt($("#txt_datos").val());
+   if($(this).is(":checked")){
+   d += parseInt($(this).val());
+   }else{
+d -= parseInt($(this).val());
+   }
+   $("#txt_datos").val(d);
+});
+$("#relay2").change(function(){
+		var d =parseInt($("#txt_datos").val());
+   if($(this).is(":checked")){
+   d += parseInt($(this).val());
+   }else{
+d -= parseInt($(this).val());
+   }
+   $("#txt_datos").val(d);
+});
+$("#relay3").change(function(){
+		var d =parseInt($("#txt_datos").val());
+   if($(this).is(":checked")){
+   d += parseInt($(this).val());
+   }else{
+d -= parseInt($(this).val());
+   }
+   $("#txt_datos").val(d);
+});
+		$("#relay4").change(function(){
+		var d =parseInt($("#txt_datos").val());
+   if($(this).is(":checked")){
+   d += parseInt($(this).val());
+   }else{
+d -= parseInt($(this).val());
+   }
+   $("#txt_datos").val(d);
+});
+
+		
+		$("#btn").click(function(nav){
+			var port = $("#txt_puerto").val();
+			 var data = $("#txt_datos").val();
+			$.ajax({
+				url: "../../cgi-bin/C/Relay/main.exe",
+				type:"GET",
+				data:"puerto="+port+"&datos="+data+"&menu=2&row=-1",
+ 			beforeSend: function() {
+ 				$("#btn_histo").focus().after("<br/><img id='img' src='img.gif'>");
+    			},
+			success: function(data) {
+    			$("#resul").html("");
+    			$("#img").remove();
+    			$("#mod").modal('show');
+     			$("#resul").html(data);
+				dato_actual();
+    			}
+ 			});
+			nav.preventDefault();
+		});
+
+		$("#btn_histo").click(function(nav){		
+		histo();
+		});
+		
+	
+		$("#btn_borrar").click(function(nav){
+			var port = $("#txt_puerto").val();
+			 var data = $("#txt_datos").val();
+			 if(confirm("Desea Eliminar el Registro?")){
+			 if(confirm("Esta Seguro?")){
+			 $.ajax({
+				url: "../../cgi-bin/C/Relay/main.exe",
+				type:"GET",
+				data:"puerto="+port+"&datos="+data+"&menu=5&row=-1",
+ 			beforeSend: function() {
+ 				$("#btn_histo").focus().after("<br/><img id='img' src='img.gif'>");
+    			},
+			success: function(data) {
+    			$("#histo").html("");
+    			$("#img").remove();
+     			$("#histo").html(data);
+    			}
+ 			});
+			 }
+			 }
+		});
+		
+		</script>
+
+	</body>
+</html>
